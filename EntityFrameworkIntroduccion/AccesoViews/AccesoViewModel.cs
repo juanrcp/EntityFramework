@@ -2,9 +2,9 @@
 {
     public class AccesoViewModel
     {
-        public string nombre_empleado { get; set; }
-        public string nivel_accesos { get; set; }
-        public string desc_acceso { get; set; }
+        public string nombre { get; set; }
+        public string nivel { get; set; }
+        public string desc { get; set; }
 
     }
 }

@@ -22,9 +22,10 @@ namespace EntityFrameworkIntroduccion.Controllers
         {
             var accesos = this.context.empleados.Include(a => a.nivel_accesos).Select(m => new AccesoViewModel
             {
-                nombre_empleado = m.nombre_empleado,
-                nivel_accesos = m.nivel_accesos,
-                desc_acceso = m.desc_acceso
+                nombre = m.nombre_empleado,
+                nivel = String.Join(", ", m.nivel_accesos.Select(a => a.nivel_acceso)),
+                desc = String.Join(", ", m.nivel_accesos.Select(a => a.desc_acceso))
+
             });
             return View(accesos);
         }
